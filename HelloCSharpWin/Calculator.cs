@@ -48,12 +48,14 @@ namespace HelloCSharpWin
             if (int.TryParse(Sum1.Text,out number1) == false)
             {
                 MessageBox.Show("Sum1에 문자가 들어왔습니다. 숫자를 입력하세요");
+                MessageBox.Show("Version2");
                 return;
             }
 
             if (int.TryParse(Sum2.Text, out number2) == false)
             {
                 MessageBox.Show("Sum2에 문자가 들어왔습니다. 숫자를 입력하세요");
+                MessageBox.Show("Version2");
                 return;
             }
 
