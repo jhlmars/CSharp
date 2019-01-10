@@ -51,6 +51,7 @@ namespace HelloCSharpWin
                 Sum1.SelectAll();
                 Sum1.Focus();
                 MessageBox.Show("Pull 숫자 확인");
+                MessageBox.Show("master브랜치에서 수정");
                 return;
             }
 
