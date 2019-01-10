@@ -28,80 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.HelloLabel = new System.Windows.Forms.Label();
-            this.Sum1 = new System.Windows.Forms.TextBox();
-            this.Sum2 = new System.Windows.Forms.TextBox();
-            this.SumNumbers = new System.Windows.Forms.Button();
-            this.SumResult = new System.Windows.Forms.TextBox();
+            this.NumBtn1 = new System.Windows.Forms.Button();
+            this.NumScreen = new System.Windows.Forms.Label();
+            this.NumBtn2 = new System.Windows.Forms.Button();
+            this.NumPlus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // HelloLabel
+            // NumBtn1
             // 
-            this.HelloLabel.AutoSize = true;
-            this.HelloLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HelloLabel.Location = new System.Drawing.Point(81, 49);
-            this.HelloLabel.Name = "HelloLabel";
-            this.HelloLabel.Size = new System.Drawing.Size(210, 24);
-            this.HelloLabel.TabIndex = 0;
-            this.HelloLabel.Text = "여기를 클릭하세요";
-            this.HelloLabel.Click += new System.EventHandler(this.HelloLabel_Click);
+            this.NumBtn1.Location = new System.Drawing.Point(37, 172);
+            this.NumBtn1.Name = "NumBtn1";
+            this.NumBtn1.Size = new System.Drawing.Size(70, 65);
+            this.NumBtn1.TabIndex = 0;
+            this.NumBtn1.Text = "1";
+            this.NumBtn1.UseVisualStyleBackColor = true;
+            this.NumBtn1.Click += new System.EventHandler(this.NumBtn1_Click);
             // 
-            // Sum1
+            // NumScreen
             // 
-            this.Sum1.Location = new System.Drawing.Point(61, 143);
-            this.Sum1.Name = "Sum1";
-            this.Sum1.Size = new System.Drawing.Size(100, 35);
-            this.Sum1.TabIndex = 1;
+            this.NumScreen.BackColor = System.Drawing.Color.White;
+            this.NumScreen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.NumScreen.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.NumScreen.Location = new System.Drawing.Point(28, 21);
+            this.NumScreen.Name = "NumScreen";
+            this.NumScreen.Size = new System.Drawing.Size(697, 121);
+            this.NumScreen.TabIndex = 1;
+            this.NumScreen.Text = "0";
+            this.NumScreen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Sum2
+            // NumBtn2
             // 
-            this.Sum2.Location = new System.Drawing.Point(221, 143);
-            this.Sum2.Name = "Sum2";
-            this.Sum2.Size = new System.Drawing.Size(100, 35);
-            this.Sum2.TabIndex = 2;
+            this.NumBtn2.Location = new System.Drawing.Point(140, 172);
+            this.NumBtn2.Name = "NumBtn2";
+            this.NumBtn2.Size = new System.Drawing.Size(70, 65);
+            this.NumBtn2.TabIndex = 2;
+            this.NumBtn2.Text = "2";
+            this.NumBtn2.UseVisualStyleBackColor = true;
+            this.NumBtn2.Click += new System.EventHandler(this.NumBtn2_Click);
             // 
-            // SumNumbers
+            // NumPlus
             // 
-            this.SumNumbers.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.SumNumbers.Location = new System.Drawing.Point(364, 143);
-            this.SumNumbers.Name = "SumNumbers";
-            this.SumNumbers.Size = new System.Drawing.Size(113, 35);
-            this.SumNumbers.TabIndex = 3;
-            this.SumNumbers.Text = "=";
-            this.SumNumbers.UseVisualStyleBackColor = true;
-            this.SumNumbers.Click += new System.EventHandler(this.SumNumbers_Click);
-            // 
-            // SumResult
-            // 
-            this.SumResult.Location = new System.Drawing.Point(522, 143);
-            this.SumResult.Name = "SumResult";
-            this.SumResult.Size = new System.Drawing.Size(100, 35);
-            this.SumResult.TabIndex = 4;
+            this.NumPlus.Font = new System.Drawing.Font("나눔고딕", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.NumPlus.Location = new System.Drawing.Point(612, 172);
+            this.NumPlus.Name = "NumPlus";
+            this.NumPlus.Size = new System.Drawing.Size(70, 65);
+            this.NumPlus.TabIndex = 3;
+            this.NumPlus.Text = "+";
+            this.NumPlus.UseVisualStyleBackColor = true;
+            this.NumPlus.Click += new System.EventHandler(this.NumPlus_Click);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.SumResult);
-            this.Controls.Add(this.SumNumbers);
-            this.Controls.Add(this.Sum2);
-            this.Controls.Add(this.Sum1);
-            this.Controls.Add(this.HelloLabel);
+            this.ClientSize = new System.Drawing.Size(747, 602);
+            this.Controls.Add(this.NumPlus);
+            this.Controls.Add(this.NumBtn2);
+            this.Controls.Add(this.NumScreen);
+            this.Controls.Add(this.NumBtn1);
             this.Name = "Calculator";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label HelloLabel;
-        private System.Windows.Forms.TextBox Sum1;
-        private System.Windows.Forms.TextBox Sum2;
-        private System.Windows.Forms.Button SumNumbers;
-        private System.Windows.Forms.TextBox SumResult;
+        private System.Windows.Forms.Button NumBtn1;
+        private System.Windows.Forms.Label NumScreen;
+        private System.Windows.Forms.Button NumBtn2;
+        private System.Windows.Forms.Button NumPlus;
     }
 }
 
