@@ -40,12 +40,10 @@ namespace HelloCSharpWin
 
         private void NumBtn1_Click(object sender, EventArgs e)
         {
-            SetNum("1");
+            Button numButton = (Button)sender;
+            SetNum(numButton.Text);
         }
-        private void NumBtn2_Click(object sender, EventArgs e)
-        {
-            SetNum("2");
-        }
+        
         public void SetNum(string num)
         {
             if (isNewNum)
@@ -72,6 +70,6 @@ namespace HelloCSharpWin
 
             NumScreen.Text = Result.ToString();
             isNewNum = true;
-        }        
+        }
     }
 }
