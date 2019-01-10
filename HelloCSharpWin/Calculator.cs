@@ -50,8 +50,6 @@ namespace HelloCSharpWin
                 MessageBox.Show("Sum1에 문자가 들어왔습니다. 숫자를 입력하세요");
                 Sum1.SelectAll();
                 Sum1.Focus();
-                MessageBox.Show("Pull 숫자 확인");
-                MessageBox.Show("master브랜치에서 수정");
                 return;
             }
 
