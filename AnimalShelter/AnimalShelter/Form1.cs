@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AnimalShelter
@@ -15,6 +8,20 @@ namespace AnimalShelter
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void CreateCustomer_Click(object sender, EventArgs e)
+        {
+            DateTime bdate = new DateTime(2000, 1, 1);
+            Customer cus = new Customer("Ian","Na",bdate);
+            cus.Address = "123 Sejong-Ro Yeoju";
+            cus.Description = "Create Name and etc";
+
+            CusFulltName.Text = cus.FullName;
+            CusAddress.Text = cus.Address;
+            CusAge.Text = cus.Age.ToString();
+            CusDescription.Text = cus.Description;
+            CusIsQualified.Text = cus.IsQualified.ToString();
         }
     }
 }
