@@ -5,6 +5,8 @@ namespace AnimalShelter
 {
     public partial class Form1 : Form
     {
+        Customer[] CustomerArray = new Customer[10];
+        public int CustomerArrayIndex = 0;
         public Form1()
         {
             InitializeComponent();
@@ -12,11 +14,31 @@ namespace AnimalShelter
 
         private void CreateCustomer_Click(object sender, EventArgs e)
         {
-            DateTime bdate = new DateTime(2000, 1, 1);
-            Customer cus = new Customer("Ian","Na",bdate);
-            cus.Address = "123 Sejong-Ro Yeoju";
-            cus.Description = "Create Name and etc";
+            CustomerArray[CustomerArrayIndex] = new Customer(CusNewFirstName.Text, CusNewLastName.Text,
+                DateTime.Parse(CusNewBirthday.Text));
+            CustomerArray[CustomerArrayIndex].Address = CusNewAddress.Text;
+            CustomerArray[CustomerArrayIndex].Description = CusNewDescription.Text;
 
+            CustomerList.Items.Add(CustomerArray[CustomerArrayIndex].FirstName);
+            CustomerArrayIndex++;
+        }
+
+        private void CustomerList_Click(object sender, EventArgs e)
+        {
+            string firstName = CustomerList.SelectedItem.ToString();
+            
+            for(int index = 0; index < CustomerArrayIndex; index++)
+            {
+                if(CustomerArray[index].FirstName == firstName)
+                {
+                    ShowDetails(CustomerArray[index]);
+                    break;
+                }
+            }
+        }
+
+        public void ShowDetails(Customer cus)
+        {
             CusFulltName.Text = cus.FullName;
             CusAddress.Text = cus.Address;
             CusAge.Text = cus.Age.ToString();
