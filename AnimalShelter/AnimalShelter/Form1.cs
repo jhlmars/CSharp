@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace AnimalShelter
 {
     public partial class Form1 : Form
     {
-        Customer[] CustomerArray = new Customer[10];
-        public int CustomerArrayIndex = 0;
+        /* 기존의 Customer 배열을 List로 수정 */
+        public List<Customer> Customers = new List<Customer>();
+        
         public Form1()
         {
             InitializeComponent();
@@ -14,24 +16,24 @@ namespace AnimalShelter
 
         private void CreateCustomer_Click(object sender, EventArgs e)
         {
-            CustomerArray[CustomerArrayIndex] = new Customer(CusNewFirstName.Text, CusNewLastName.Text,
+            Customer cus = new Customer(CusNewFirstName.Text, CusNewLastName.Text,
                 DateTime.Parse(CusNewBirthday.Text));
-            CustomerArray[CustomerArrayIndex].Address = CusNewAddress.Text;
-            CustomerArray[CustomerArrayIndex].Description = CusNewDescription.Text;
+            cus.Address = CusNewAddress.Text;
+            cus.Description = CusNewDescription.Text;
 
-            CustomerList.Items.Add(CustomerArray[CustomerArrayIndex].FirstName);
-            CustomerArrayIndex++;
+            CustomerList.Items.Add(cus.FirstName);
+            Customers.Add(cus);
         }
 
         private void CustomerList_Click(object sender, EventArgs e)
         {
             string firstName = CustomerList.SelectedItem.ToString();
             
-            for(int index = 0; index < CustomerArrayIndex; index++)
+            foreach(Customer cus in Customers)
             {
-                if(CustomerArray[index].FirstName == firstName)
+                if(cus.FirstName == firstName)
                 {
-                    ShowDetails(CustomerArray[index]);
+                    ShowDetails(cus);
                     break;
                 }
             }
