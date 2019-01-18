@@ -21,31 +21,53 @@ namespace AnimalShelter
             cus.Address = CusNewAddress.Text;
             cus.Description = CusNewDescription.Text;
 
-            CustomerList.Items.Add(cus.FirstName);
+            CusListView.Rows.Add(cus.FirstName, cus.Age, cus.IsQualified);
             Customers.Add(cus);
+
+            CusNewFirstName.Text = "";
+            CusNewLastName.Text = "";
+            CusNewBirthday.Text = "";
+            CusNewAddress.Text = "";
+            CusNewDescription.Text = "";
         }
 
-        private void CustomerList_Click(object sender, EventArgs e)
+        public void ShowDetails(Customer cus)
         {
-            string firstName = CustomerList.SelectedItem.ToString();
-            
-            foreach(Customer cus in Customers)
+            CusFullName.Text = cus.FullName;
+            CusAddress.Text = cus.Address;
+            CusAge.Text = cus.Age.ToString();
+            CusDescription.Text = cus.Description;
+            CusIsQualified.Text = cus.IsQualified.ToString();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string firstName = (string)CusListView.Rows[e.RowIndex].Cells[0].Value;
+
+            foreach (Customer cus in Customers)
             {
-                if(cus.FirstName == firstName)
+                if (cus.FirstName == firstName)
                 {
                     ShowDetails(cus);
                     break;
                 }
             }
+
+            CusDetailPanel.Show();
+            CusNewPanel.Hide();
         }
 
-        public void ShowDetails(Customer cus)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            CusFulltName.Text = cus.FullName;
-            CusAddress.Text = cus.Address;
-            CusAge.Text = cus.Age.ToString();
-            CusDescription.Text = cus.Description;
-            CusIsQualified.Text = cus.IsQualified.ToString();
+            CusListPanel.Dock = DockStyle.Fill;
+            CusDetailPanel.Dock = DockStyle.Right;
+            CusNewPanel.Dock = DockStyle.Right;
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CusNewPanel.Show();
+            CusDetailPanel.Hide();
         }
     }
 }
