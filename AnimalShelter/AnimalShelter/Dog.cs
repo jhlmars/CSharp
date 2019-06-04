@@ -14,6 +14,7 @@ namespace AnimalShelter
         public string Gender;
         public string Description;
         public DogBreed Breed;
+        public DogBreed Breed;
 
         public Dog(string name, string color, string gender, DogBreed breed)
         {

@@ -15,7 +15,7 @@ namespace AnimalShelter
         public string Address;
         public string Description;
 
-        public Cat MyCat;
+        public Cat MyCat;        
 
         public Customer(string firstname, string lastname, DateTime birthday)
         {
